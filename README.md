@@ -1,0 +1,1 @@
+This website provides comprehensive details about workshops, including schedules, topics covered, and hands-on activities. Additionally, it offers valuable resources tailored for beginners, ensuring they have all the tools and knowledge needed to get started.
