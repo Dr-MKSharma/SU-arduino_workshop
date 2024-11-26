@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Workshop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tabs {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .tab:hover {
+            background-color: #e0e0e0;
+        }
+
+        .tab-content {
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            margin-right: 20px;
+            width: 150px;
+            height: 150px;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            border: 0.5px solid #ddd;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 6000px;
+            margin: auto;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            display: inline-block;
+            width: 100%;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arduino Workshop at Shobhit University, Meerut on 22-Nov-2024</h1>
+    </header>
+    
+    <nav>
+        <ul class="tabs">
+            <li class="tab" onclick="openTab('profile')">Dr. Manoj Kumar Sharma</li>
+            <li class="tab" onclick="openTab('presentation')">Presentation</li>
+            <li class="tab" onclick="openTab('resources')">Resources</li>
+            <li class="tab" onclick="openTab('projects')">Arduino Projects</li>
+            <li class="tab" onclick="openTab('photos')">Workshop Photos</li>
+        </ul>
+    </nav>
+    
+    <main><!-- Profile Section -->
+        <div id="profile" class="tab-content">
+            <h2>Dr. Manoj Kumar Sharma</h2>
+            <div class="profile">
+                <img src="C:\Users\Dell\OneDrive\Desktop\Arduino Programming\resources\Dr.Manojphoto.jpeg" alt="Dr. Manoj Kumar Sharma">
+                <div>
+                    <p><strong>Associate Professor</strong></p>
+                    <p>Dr. Manoj Kumar Sharma is an Associate Professor at Shobhit University, specializing in embedded systems and IoT technologies. With years of academic and industrial experience, he is passionate about mentoring students and advancing technological research.</p>
+                    <p><strong>Contact:</strong></p>
+                    <ul>
+                        <li><strong>Mobile:</strong> +91-9045004325</li>
+                        <li><strong>Email:</strong> <a href="mailto:manoj.sharma@shobhituniversity.ac.in">manoj.sharma@shobhituniversity.ac.in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+      <!-- Presentation Section -->
+<div id="presentation" class="tab-content hidden">
+    
+    <iframe 
+        src="C:\Users\Dell\OneDrive\Desktop\Arduino Programming\resources\arduino_workshop.pptx.pdf" 
+        style="width: 100%; height: 80vh; border: none;" 
+        allowfullscreen>
+    </iframe>
+    <p>If the embedded presentation doesn't load, you can 
+        <a href="https://docs.google.com/presentation/d/1HMfXezU-gVCj6x32Ak1ODDX-M-FLcmn5/edit?usp=sharing&ouid=112848278349935068535&rtpof=true&sd=true" target="_blank">
+            view it here
+        </a>.
+    </p>
+</div>
+
+
+        <div id="resources" class="tab-content hidden">
+            <h2>Resources</h2>
+            <p>Below are some Arduino codes for your reference:</p>
+            <pre>
+                // Blink an LED
+                void setup() {
+                  pinMode(LED_BUILTIN, OUTPUT); // Initialize the built-in LED pin as an output
+                }
+                
+                void loop() {
+                  digitalWrite(LED_BUILTIN, HIGH); // Turn the LED on
+                  delay(1000); // Wait for 1 second
+                  digitalWrite(LED_BUILTIN, LOW); // Turn the LED off
+                  delay(1000); // Wait for 1 second
+                }
+            </pre>
+            
+            <pre>// Temperature Sensor with Serial Output
+                #include <DHT.h> // Include the DHT sensor library
+                #define DHTPIN 2 // Define the pin to which the DHT sensor is connected
+                #define DHTTYPE DHT11 // Specify the type of DHT sensor (DHT11)
+                
+                DHT dht(DHTPIN, DHTTYPE); // Initialize the DHT sensor with the specified pin and type
+                
+                void setup() {
+                  Serial.begin(9600); // Start serial communication at 9600 baud rate
+                  dht.begin(); // Initialize the DHT sensor
+                }
+                
+                void loop() {
+                  float temp = dht.readTemperature(); // Read the temperature in Celsius from the sensor
+                  Serial.println("Temperature: " + String(temp) + " °C"); // Print the temperature to the Serial Monitor
+                  delay(2000); // Wait for 2 seconds before the next reading
+                }
+                
+            </pre>
+            <p><strong>Additional Resources:</strong></p>
+            <ul>
+                <li><a href="C:\Users\Dell\OneDrive\Desktop\Arduino Programming\resources\make_gettingstartedwitharduino_3rdedition.pdf" target="_blank">Make: Getting Started with Arduino (3rd Edition)</a></li>
+                <li><a href="C:\Users\Dell\OneDrive\Desktop\Arduino Programming\resources\Arduino-Learning-Guide-for-Beginners-Using-Maker-UNO-X.pdf" target="_blank">Arduino-Learning-Guide-for-Beginners (v1.4 February 2020)</a></li>
+         		<li><a href="C:\Users\Dell\OneDrive\Desktop\Arduino Programming\resources\1_30 Arduino Project.pdf" target="_blank">Book on 30 Arduino Projects for the Evil Genius</a></li>
+				<li><a href="C:\Users\Dell\OneDrive\Desktop\Arduino Programming\workshops codes" target="_blank">Workshop Codes (Arduino Code Folder)</a></li>
+            </ul>
+        </div>
+        
+
+        <!-- Arduino Projects Section -->
+        <div id="projects" class="tab-content hidden">
+            <h2>Arduino Projects</h2>
+            <div class="grid-container">
+                <!-- YouTube Projects -->
+                <div class="grid-item">
+                    <iframe src="https://www.youtube.com/embed/1mSr4IzEQ-Q" allowfullscreen></iframe>
+                    <p><a href="https://youtu.be/1mSr4IzEQ-Q" target="_blank">Display effects on LED Cube with Arduino Nano | Mesmerizing | Hardware-Simulation</a></p>
+                </div>
+                <div class="grid-item">
+                    <iframe src="https://www.youtube.com/embed/lIvnfoVXASQ" allowfullscreen></iframe>
+                    <p><a href="https://youtu.be/lIvnfoVXASQ" target="_blank">P10 LED CONTROLED BY ARDUINO</a></p>
+                </div>
+                <div class="grid-item">
+                    <iframe src="https://www.youtube.com/embed/HEdtqakk88k" allowfullscreen></iframe>
+                    <p><a href="https://youtube.com/shorts/HEdtqakk88k?feature=share" target="_blank">Happy Diwali wishes on OLED with Arduino nano</a></p>
+                </div>
+                <div class="grid-item">
+                    <iframe src="https://www.youtube.com/embed/Hx3YVbCvrKg" allowfullscreen></iframe>
+                    <p><a href="https://youtube.com/shorts/Hx3YVbCvrKg?feature=share" target="_blank">Automatic Rubic Cube Solver</a></p>
+                </div>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- Wokwi Projects List -->
+            <h3>Wokwi Projects</h3>
+            <ul>
+                <li><a href="https://wokwi.com/projects/413078591138541569" target="_blank">Happy Diwali wishes on OLED with Arduino nano</a></li>
+                <li><a href="https://wokwi.com/projects/411427461305217025" target="_blank">Arduino LED Blink Simulation</a></li>
+                <li><a href="https://wokwi.com/projects/396846541781063681" target="_blank">Display effects on LED Cube with Arduino Nano | Mesmerizing | Software-Simulation</a></li>
+                <li><a href="https://wokwi.com/projects/322062421191557714" target="_blank">Hello Creaters</a></li>
+            </ul>
+        </div>
+
+        <!-- Photos Section -->
+        <div id="photos" class="tab-content hidden">
+            <h2>Photos of Workshop</h2>
+            <div class="carousel-container">
+                <div class="carousel-images" id="carousel">
+                   <img src="./resources/w1.jpeg?remote=true" alt="Workshop Photo 1">
+                    <img src="./resources/w2.jpeg?remote=true" alt="Workshop Photo 2">
+                    <img src="./resources/w3.jpeg?remote=true" alt="Workshop Photo 3">
+                    <img src="./resources/w4.jpeg?remote=true" alt="Workshop Photo 4">
+                </div>
+                <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
+                <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
+            </div>
+			 <h2>Video Lecture of Workshop</h2>
+			<video width="100%" height="100%" controls>
+  <source src="C:\Users\Dell\OneDrive\Desktop\Arduino Programming\resources\wv1.mp4" type="video/mp4">
+  </video>
+
+        </div>
+		
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Arduino Workshop</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+
+        function openTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.add('hidden'));
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        function nextSlide() {
+            const carousel = document.getElementById('carousel');
+            const slides = carousel.children.length;
+            currentSlide = (currentSlide + 1) % slides;
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function prevSlide() {
+            const carousel = document.getElementById('carousel');
+            const slides = carousel.children.length;
+            currentSlide = (currentSlide - 1 + slides) % slides;
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+    </script>
+</body>
+</html>
